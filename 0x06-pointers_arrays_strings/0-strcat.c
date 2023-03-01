@@ -1,26 +1,22 @@
 #include "main.h"
-/**
- * _strcat - concatenates two strings
- * @dest: destination
- * @src: source
- * Return:the pointer to dest
+#include <stdio.h>
+
+/* This is supposed to concatenate two strings
+ * main starts the program
+ * It ought to return 0 if there is no error
  */
-char *_strcat(char *dest, char *src)
+
+int main (void)
 {
-	int count = 0, count2 = 0;
-
-	while (*(dest + count) != '\0')
-	{
-		count++;
-	}
-
-	while (count2 >= 0)
-	{
-		*(dest + count) = *(src + count2);
-		if (*(src + count2) == '\0')
-			break;
-		count++;
-		count2++;
-	}
-	return (dest);
+	char *_strcat(char *dest, char *src) {
+    char *temp = dest;
+    while (*dest) {
+        dest++;
+    }
+    while (*src) {
+        *dest++ = *src++;
+    }
+    *dest = '\0';
+    return temp;
 }
+
